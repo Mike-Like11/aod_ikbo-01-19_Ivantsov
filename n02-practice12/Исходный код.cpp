@@ -1,11 +1,5 @@
 #include <iostream>
 #include <iomanip>
-#include <cmath> 
-#include<fstream>
-#include<vector>
-using namespace std;
-#include <iostream>
-#include <iomanip>
 #include <cmath>
 #include<string>
 #include <fstream>
@@ -34,9 +28,7 @@ void read_data_from_file(){
 void read_data_from_binary_file(){
 	ifstream fin("output.txt", istream::binary);
 	bank_account temp;
-	int size = bk.size();
-	bk.clear();
-	bk.resize(size);
+	int size = bk.size();	
 	for (int i = 0; i < size; i++){
 		fin.read((char*)&bk.at(i), sizeof(bank_account));
 	}
@@ -69,7 +61,8 @@ void change(){
 	cout << "input number of account, which you want to change : ";
 	cin >> a;
 	cout << "Input new surname : ";
-	cin >> b;	
+	cin >> b;
+	read_data_from_binary_file();
 	for (int i = 0; i < bk.size(); i++){
 		if (bk[i].num == a){
 			bk[i].surname = b;
@@ -80,7 +73,8 @@ void change(){
 void deletik(){
 	int a;
 	cout << "input number of account, which you want to delete : ";
-	cin >> a;	
+	cin >> a;
+	read_data_from_binary_file();
 	for (int i = 0; i < bk.size(); i++){
 		if (bk[i].num == a){
 			bk.erase(bk.begin() + i);
@@ -97,6 +91,7 @@ int main(){
 	string line;
 	read_data_from_file();
 	write_data_to_binary();
+	read_data_from_binary_file();
 	print_all_data();
 	find();
 	change();
