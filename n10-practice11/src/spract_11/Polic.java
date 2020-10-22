@@ -1,24 +1,24 @@
 package spract_11;
 
 public class Polic {
-    int inn;
+    int number;
     String company;
     String surname;
 
-    public Polic(int inn, String company, String surname) {
-        this.inn = inn;
+    public Polic(int number, String company, String surname) {
+        this.number = number;
         this.company = company;
         this.surname = surname;
     }
 
-    public int getInn() {
-        return inn;
+    public int getNumber() {
+        return number;
     }
 
     @Override
     public String toString() {
         return "Polic{" +
-                "inn=" + inn +
+                "number=" + number +
                 ", company='" + company + '\'' +
                 ", surname='" + surname + '\'' +
                 '}'+"\n";
