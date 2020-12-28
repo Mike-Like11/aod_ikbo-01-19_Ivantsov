@@ -26,7 +26,7 @@ double fractional_knapsack(int W, struct Item arr[], int n)
 			tot_value += arr[i].value;
 		}
 		else
-		{   // Добавляем часть следующего предмета
+		{   // Р”РѕР±Р°РІР»СЏРµРј С‡Р°СЃС‚СЊ СЃР»РµРґСѓСЋС‰РµРіРѕ РїСЂРµРґРјРµС‚Р°
 			int rem_weight = W - cur_weight;
 			tot_value += arr[i].value *
 				((double)rem_weight / arr[i].weight);
@@ -37,13 +37,13 @@ double fractional_knapsack(int W, struct Item arr[], int n)
 }
 int main()
 {
-	int W = 50; // вместительность рюкзака
-	Item arr[] = { { 60, 10 }, { 100, 20 }, { 120, 30 } }; // {стоимость, вес}
-	int n = sizeof(arr) / sizeof(arr[0]);
-	cout << "жадный дробный рюкзак" << endl;
-	cout << "максимальная ценность: " << fractional_knapsack(W, arr, n);
+
+	int W = 50; // РІРјРµСЃС‚РёС‚РµР»СЊРЅРѕСЃС‚СЊ СЂСЋРєР·Р°РєР°
+	Item arr[] = { { 60, 10 }, { 100, 20 }, { 120, 30 } }; // {СЃС‚РѕРёРјРѕСЃС‚СЊ, РІРµСЃ}
+	int n = sizeof(arr) / sizeof(arr[0]);	
+	cout << "РјР°РєСЃРёРјР°Р»СЊРЅР°СЏ С†РµРЅРЅРѕСЃС‚СЊ: " << fractional_knapsack(W, arr, n);
 	cout << endl;
 	return 0;
 }
-	
+		
 
